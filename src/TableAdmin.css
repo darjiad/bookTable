@@ -1,0 +1,116 @@
+.main{
+    text-align: center;
+}
+.Addtable {
+    /* border: 2px solid red; */
+    text-align: center;
+    padding: 30px;
+    
+}
+.Addtable span{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #cb202d;
+
+}
+.Addtable input{
+    border: 2px solid #cb202d;
+    width: 80px;
+    font-size: 20px;
+    color: #cb202d;
+    font-weight: bold;
+    text-align: center;
+}
+.Addtable button{
+    /* border: 2px solid red; */
+    width: 70px;
+    font-size: 20px;
+    margin-left: 20px;
+    background-color: #cb202d;
+    color: white;
+     padding: 2px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+}
+.save{
+    width: 70px;
+    font-size: 20px;
+    margin-left: 20px;
+    background-color: #cb202d;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    padding: 2px;
+    border-radius: 5px;
+}
+.BookTable{
+    min-width: 70px;
+    font-size: 20px;
+    margin-left: 20px;
+    background-color: #cb202d;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    padding: 2px;
+    border-radius: 5px;
+    position: relative;
+    left: 120px;
+    cursor: pointer;
+}
+.flex
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.table tr,.table td{
+     border: 3px solid #cb202d;
+     text-align: center;
+     
+}
+.table{
+    table-layout: fixed ;
+    width: 50% ;
+    margin-left: 25%;
+    margin-bottom: 30px;
+    font-size: 17px;
+    font-weight: bold;
+    color: #cb202d;
+    text-align: center;
+}
+.table thead{
+    font-size: 18px;
+    color: black;
+}
+.table tr,  .table td{
+    width:25% ;
+    padding: 10px;
+}
+.table input{
+    border: 2px solid #cb202d;
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+    left: -3%;
+
+}
+input::placeholder{
+    font-size: 11px;
+    text-align: center;
+}
+
+.table{
+    border: 2px solid red;
+}
+.table2 tr ,.table2 td{
+    border: 2px solid red;
+}
+.select{
+    border: 2px solid #cb202d;
+    width: 95%;
+    font-size: 14px;
+    text-align: center;
+}

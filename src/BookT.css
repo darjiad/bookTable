@@ -1,0 +1,356 @@
+.bk2 .button{
+    /* margin-left: 550px; */
+    border: none;
+   }
+   .bk2 input{
+     /* box-shadow: 5px 10px 18px #b8b3b3; */
+     padding: 5px;
+     border: 2px solid #cb202d;
+     margin-top: 10px;
+   }
+   .bk2 select{
+     /* box-shadow: 5px 10px 18px #b8b3b3; */
+     padding: 5px;
+     border: 2px solid #cb202d;
+     margin-top: 10px;
+   }
+   .bk2{
+     /* border: 2px solid firebrick; */
+     min-width: 60%;
+     min-height: 30vh;
+   }
+   .Booking1{
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    margin: 60px;
+    /* height: 10vh; */
+  }
+  
+  .nameandphn{
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 29vh;
+    border: 2px solid black;
+    /* margin-top: 20px; */
+    border-radius: 5px;
+    /* margin: auto; */
+    /* margin-top: 20px; */
+    /* box-shadow: 5px 10px 18px #b8b3b3; */
+    text-align: center;
+    font-weight: bold;
+  }
+  .nameandphn input{
+    width: 60%;
+    margin-left: 75px;
+  }
+  .booktable {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin-top: 30px;
+  }
+  
+  .Booking {
+    grid-column: span 1;
+    display: flex;
+    flex-direction: column;
+    /* margin: 60px; */
+  }
+  .booktable1{
+    font-size: 18px;
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    /* justify-content:center; */
+    /* align-items: center; */
+    border: 2px solid black;
+    width: 100%;
+    min-height: 19vh;
+
+    /* position: relative;
+    top: -13px; */
+
+    /* margin-top: 20px; */
+    border-radius: 5px;
+    /* margin: auto; */
+    /* margin-top: 20px; */
+    /* box-shadow: 5px 10px 18px #b8b3b3; */
+    text-align: center;
+    font-weight: bold;
+    /* margin: 30px; */
+  }
+  .person select{
+    margin-left: 20px;
+  }
+  .showbtn{
+    /* width: 200%; */
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 15vh;
+    /* margin: auto; */
+    border: none;
+  }
+  .btne{
+    background-color: #cb202d;
+    padding: 10px;
+    width: 250px;
+    color: #f4f4f2;
+    /* margin-bottom: 20px; */
+    border-radius: 8px;
+    font-size: 20px;
+    border: none;
+    
+  }
+  .imagel:disabled ,.imagel[disabled]{
+    opacity: 0.1;
+     background-color: rgb(159, 155, 155);
+     border: none;
+     cursor: none;
+ }
+ .ll:disabled .p2,.ll[disabled] .p2{
+   background-color: #b8b3b3;
+ }
+ .ll:disabled .p4{
+   background-color: #b8b3b3;
+ }
+ .imagel{
+    width: 150px;
+    height: 30vh;
+    /* box-shadow: 5px 10px 18px #cb202d; */
+    /* background-color: #b8b3b3; */
+    margin-bottom: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border: none;
+  }
+  .alllayout{
+     margin-top: 20px;
+    
+     display: grid;
+     grid-template-columns: auto auto auto auto;
+     width: 100%;
+     align-items: center;
+     justify-content: space-between;
+  
+  }
+  .mes2{
+    font-size: 20px;
+    color: #cb202d;
+    /* font-weight: bold; */
+    text-align: center;
+    margin-top: 10px;
+    position: relative;
+    font-weight: bold;
+    left: -10px;
+  
+  }
+  .mes3{
+    font-size: 25px;
+    color: #cb202d;
+    /* font-weight: bold; */
+    text-align: center;
+    margin-top: 10px;
+    position: relative;
+    font-weight: bold;
+    left: -10px;
+  
+  }
+  .Booking span{
+    color: #cb202d;
+    font-size: 25px;
+    text-align: center;
+  }
+  /* .mainDiv{
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+   .div{
+    width: 30px;
+    height: 30px;
+    color: #cb202d;
+    margin: 20px;
+  } */
+  .MainDiv2  button  {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-top: 20px;
+    color: #cb202d;
+    width: 30px;
+    border: none;
+    
+    /* grid-gap: 20px; */
+  }
+ 
+  .div{
+    /* display: grid;
+    grid-template-columns: auto auto;
+    margin-top: 20px;
+    color: #cb202d; */
+    /* border: 2px solid black; */
+    width: 65px;
+    text-align: center;
+    /* grid-gap: 20px; */
+    /* border: 2px solid red; */
+    /* width: 30px; */
+  }
+  
+  .MainDiv4 button{
+    display: grid;
+   grid-template-columns: auto auto ;
+    margin-top: 20px;
+    border: none;
+    
+    /* grid-column-gap: 10px; */
+    /* color: #cb202d; */
+    /* border: 2px soli red; */
+    align-self: center;
+    width: 30px;
+  }
+  .MainDiv6 button{
+    display: grid;
+   grid-template-columns: auto auto auto;
+    margin-top: 20px;
+    /* grid-column-gap: 10px; */
+    color: #cb202d;
+    border: none;
+    align-self: center;
+    width: 30px;
+    /* grid-gap: 20px; */
+    /* width: 30px; */
+
+  }
+  .MainDiv8 button{
+    display: grid;
+   grid-template-columns: auto auto auto auto;
+    margin-top: 20px;
+    /* grid-column-gap: 10px; */
+    color: #cb202d;
+    align-self: center;
+    border: none;
+    width: 30px;
+    /* grid-gap: 20px; */
+    /* width: 30px; */
+
+  }
+  .MainDiv10 button{
+    display: grid;
+   grid-template-columns: auto auto auto auto auto;
+    margin-top: 20px;
+    /* grid-column-gap: 10px; */
+    color: #cb202d;
+    align-self: center;
+    border: none;
+    width: 30px;
+    /* grid-gap: 20px; */
+    /* width: 30px; */
+
+  }
+  .MainDivM button{
+    display: grid;
+   grid-template-columns: auto auto auto auto auto auto;
+    margin-top: 20px;
+    /* grid-column-gap: 10px; */
+    color: #cb202d;
+    align-self: center;
+    border: none;
+    width: 30px;
+    /* grid-gap: 20px; */
+    /* width: 30px; */
+
+  }
+  .MainDiv2 button:disabled ,.MainDiv2 button[disabled]{
+    opacity: 0.1;
+     /* background-color: black; */
+     border: none;
+     cursor: none;
+ }
+ .MainDiv4 button:disabled ,.MainDiv4 button[disabled]{
+  opacity: 0.1;
+   /* background-color: black; */
+   border: none;
+   cursor: none;
+}
+.MainDiv6 button:disabled ,.MainDiv6 button[disabled]{
+  opacity: 0.1;
+   /* background-color: black; */
+   border: none;
+   cursor: none;
+}
+.MainDiv8 button:disabled ,.MainDiv8 button[disabled]{
+  opacity: 0.1;
+   /* background-color: black; */
+   border: none;
+   cursor: none;
+}
+.MainDiv10 button:disabled ,.MainDiv10 button[disabled]{
+  opacity: 0.1;
+   /* background-color: black; */
+   border: none;
+   cursor: none;
+}
+  .box.active {
+    width: 50px;
+    height: 50px;
+    background-color:#cb202d;
+    margin: 5px;
+  }
+  .box{
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    background-color:green;
+  }
+  .mainCon{
+    display: grid;
+    grid-template-columns: auto auto auto ;
+      align-items: center;
+      margin-left: 170px;
+  }
+  
+  .button{
+    /* border: 2px solid red; */
+    background-color: #cb202d;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    width: 10%;
+    font-size: 20px;
+    margin-top: 20px;
+    border-radius: 6px;
+    margin-left: 20px;
+  }
+  .button3{
+    /* border: 2px solid red; */
+    background-color: #cb202d;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    width: 10%;
+    font-size: 20px;
+    margin-top: 20px;
+    border-radius: 6px;
+    margin-left: 680px;
+  }
+  .twobutton {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .button1{
+    /* border: 2px solid red; */
+    background-color: #cb202d;
+    width: 50%;
+    padding: 3px;
+    color: #f4f4f2;
+    border-radius: 6px;
+  }
+  
+  
+  
+  
