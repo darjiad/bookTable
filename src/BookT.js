@@ -56,6 +56,7 @@ function BookT() {
     getCurrentTime();
   }, []);
   useEffect(() => {
+    console.log(totalperson)
     if (totalperson === 0) {
       setPerson6(false);
       setPerson4(false);
@@ -208,6 +209,7 @@ function BookT() {
           <input type='text' onChange={(e) => setUserData({ ...userData, phoneNo: e.target.value })} required/>
         </div>
         
+        
           <div className="Booking">
             <span>Select Person:</span>
             <div className="person">
@@ -222,8 +224,8 @@ function BookT() {
                 <option value="7">7</option>
                 <option value="8">8</option>
                 <option value="9">9</option>
-                <option value="10-20">10</option>
-                <option value="20-30">20</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
               </select>
               <select onChange={(e) => setKids(e.target.value)} required>
                 <option value="">--Select kids above 2 years--</option>
@@ -237,8 +239,8 @@ function BookT() {
                 <option value="7">7</option>
                 <option value="8">8</option>
                 <option value="9">9</option>
-                <option value="10-20">10</option>
-                <option value="20-30">20</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
               </select>
             </div>
           </div>
