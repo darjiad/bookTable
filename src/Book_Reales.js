@@ -128,10 +128,10 @@ function Book_Reales() {
     // console.log(date.date1)
     // console.log(time)
     setShowLayout(true);
-    const k = Number(kids);
+    // const k = Number(kids);
     const el = Number(elder);
-    setTotalperson(k + el);
-    setUserData({...userData,totalperson:k+el});
+    setTotalperson(el);
+    setUserData({...userData,totalperson:el});
   }
   function DisableDate() {
     return new Date().toISOString().split("T")[0];
@@ -248,7 +248,7 @@ function Book_Reales() {
         
           <div className="Booking">
             <span>Select Person:</span>
-            <div className="person">
+            {/* <div className="person"> */}
               <select onChange={(e) => setElder(e.target.value)} required>
                 <option value="">--Select elders--</option>
                 <option value="1">1</option>
@@ -263,7 +263,7 @@ function Book_Reales() {
                 <option value="10">10</option>
                 <option value="20">20</option>
               </select>
-              <select onChange={(e) => setKids(e.target.value)} required>
+              {/* <select onChange={(e) => setKids(e.target.value)} required>
                 <option value="">--Select kids above 2 years--</option>
                 <option value="0">0</option>
                 <option value="1">1</option>
@@ -278,7 +278,7 @@ function Book_Reales() {
                 <option value="10">10</option>
                 <option value="20">20</option>
               </select>
-            </div>
+            </div> */}
           </div>
           <div className="Booking">
             {" "}
@@ -313,7 +313,7 @@ function Book_Reales() {
           </div>
 
         <div>
-          {showLayout && kids && elder && date && (
+          {showLayout  && elder && date && (
             <>
               <div className="mainCon">
                 {data.map((val) => {

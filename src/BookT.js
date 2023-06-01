@@ -21,7 +21,7 @@ function BookT() {
   const [person10, setPerson10] = useState(false);
   const [occupancy,setOccupancy]=useState(0)
   const [elder, setElder] = useState("");
-  const [kids, setKids] = useState("");
+  // const [kids, setKids] = useState("");
   const [totalperson, setTotalperson] = useState(0);
   const [showLayout, setShowLayout] = useState(false);
   const [isActive,setIsActive]=useState(false);
@@ -129,10 +129,10 @@ function BookT() {
     // console.log(date.date1)
     // console.log(time)
     setShowLayout(true);
-    const k = Number(kids);
+    // const k = Number(kids);
     const el = Number(elder);
-    setTotalperson(k + el);
-    setUserData({...userData,totalperson:k+el});
+    setTotalperson(el);
+    setUserData({...userData,totalperson:el});
   }
   function DisableDate() {
     return new Date().toISOString().split("T")[0];
@@ -212,9 +212,9 @@ function BookT() {
         
           <div className="Booking">
             <span>Select Person:</span>
-            <div className="person">
+            {/* <div className="person"> */}
               <select onChange={(e) => setElder(e.target.value)} required>
-                <option value="">--Select elders--</option>
+                <option value="">--Select Persons--</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -227,7 +227,7 @@ function BookT() {
                 <option value="10">10</option>
                 <option value="20">20</option>
               </select>
-              <select onChange={(e) => setKids(e.target.value)} required>
+              {/* <select onChange={(e) => setKids(e.target.value)} required>
                 <option value="">--Select kids above 2 years--</option>
                 <option value="0">0</option>
                 <option value="1">1</option>
@@ -241,8 +241,8 @@ function BookT() {
                 <option value="9">9</option>
                 <option value="10">10</option>
                 <option value="20">20</option>
-              </select>
-            </div>
+              </select> */}
+            {/* </div> */}
           </div>
           <div className="Booking">
             {" "}
@@ -277,7 +277,7 @@ function BookT() {
           </div>
 
         <div>
-          {showLayout && kids && elder && date && (
+          {showLayout && elder && date && (
             <>
               <div className="mainCon">
                 {data.map((val) => {
