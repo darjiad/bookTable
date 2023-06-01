@@ -8,7 +8,6 @@ import { useNavigate ,Link} from "react-router-dom";
 
 import "./BookT.css";
 
-
 function Book_Reales() {
   const loc = useLocation();
   const nv1=useNavigate();
@@ -261,8 +260,8 @@ function Book_Reales() {
                 <option value="7">7</option>
                 <option value="8">8</option>
                 <option value="9">9</option>
-                <option value="10-20">10</option>
-                <option value="20-30">20</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
               </select>
               <select onChange={(e) => setKids(e.target.value)} required>
                 <option value="">--Select kids above 2 years--</option>
@@ -276,8 +275,8 @@ function Book_Reales() {
                 <option value="7">7</option>
                 <option value="8">8</option>
                 <option value="9">9</option>
-                <option value="10-20">10</option>
-                <option value="20-30">20</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
               </select>
             </div>
           </div>
