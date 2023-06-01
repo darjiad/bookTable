@@ -11,6 +11,7 @@ import "./BookT.css";
 function Book_Reales() {
   const loc = useLocation();
   const nv1=useNavigate();
+  const wp=loc.state.waitingPerson;
   const data1 = loc.state.data;
   const [data,setData]=useState(data1)
   const [div, setDiv] = useState();
@@ -34,9 +35,9 @@ function Book_Reales() {
   // const [time, setTime] = useState("");
   const [currentTime, setCurrentTime] = useState('');
   const [userData,setUserData]=useState({
-    name:'',
-    phoneNo:'',
-    totalperson:0,
+    name:wp? wp[0].name:"",
+    phoneNo:wp?wp[0].mobileNo:"",
+    totalperson:wp?wp[0].person:"",
     date:date.date1,
     time:currentTime
 
@@ -45,6 +46,7 @@ function Book_Reales() {
   console.log(userData);
 
   useEffect(() => {
+    console.log(wp);
     const getCurrentTime = () => {
       const currentDate = new Date();
       const hours = String(currentDate.getHours()).padStart(2, '0');
@@ -173,7 +175,7 @@ function Book_Reales() {
       })
     );
   }
-  function Proceed(sTable)
+   function Proceed(sTable)
   {
     setData((prevItems) =>
     prevItems.map((item) => {
@@ -239,17 +241,19 @@ function Book_Reales() {
         <div className="booktable">
         <div className="Booking">
           <span>Enter Name:</span>
-          <input type='text' onChange={(e) => setUserData({ ...userData, name: e.target.value })}/>
+          <input type='text' value={userData.name} onChange={(e) => setUserData({ ...userData, name: e.target.value })}/>
         </div>
         <div className="Booking">
           <span>Enter Phone No:</span>
-          <input type='text' onChange={(e) => setUserData({ ...userData, phoneNo: e.target.value })}/>
+          <input type='text' value={userData.phoneNo} onChange={(e) => setUserData({ ...userData, phoneNo: e.target.value })}/>
         </div>
         
           <div className="Booking">
             <span>Select Person:</span>
             {/* <div className="person"> */}
-              <select onChange={(e) => setElder(e.target.value)} required>
+            {
+              !wp &&
+                <select onChange={(e) => setElder(e.target.value)} required>
                 <option value="">--Select elders--</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -263,6 +267,8 @@ function Book_Reales() {
                 <option value="10">10</option>
                 <option value="20">20</option>
               </select>
+            }
+            <input type='text' value={userData.totalperson}/>
               {/* <select onChange={(e) => setKids(e.target.value)} required>
                 <option value="">--Select kids above 2 years--</option>
                 <option value="0">0</option>

@@ -11,6 +11,7 @@ import "./BookT.css";
 function BookT() {
   const loc = useLocation();
   const nv1=useNavigate();
+  
   const data1 = loc.state.data;
   const [data,setData]=useState(data1)
   const [div, setDiv] = useState();
