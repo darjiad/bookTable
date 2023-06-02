@@ -53,6 +53,10 @@ function Book_Reales() {
       const minutes = String(currentDate.getMinutes()).padStart(2, '0');
       const currentTimeString = `${hours}:${minutes}`;
       setCurrentTime(currentTimeString);
+      setUserData((prevUserData) => ({
+        ...prevUserData,
+        time: currentTimeString
+      }));
     };
 
     getCurrentTime();
@@ -268,7 +272,10 @@ function Book_Reales() {
                 <option value="20">20</option>
               </select>
             }
+            {
+              wp &&
             <input type='text' value={userData.totalperson}/>
+            }
               {/* <select onChange={(e) => setKids(e.target.value)} required>
                 <option value="">--Select kids above 2 years--</option>
                 <option value="0">0</option>

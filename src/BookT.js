@@ -52,6 +52,10 @@ function BookT() {
       const minutes = String(currentDate.getMinutes()).padStart(2, '0');
       const currentTimeString = `${hours}:${minutes}`;
       setCurrentTime(currentTimeString);
+      setUserData((prevUserData) => ({
+        ...prevUserData,
+        time: currentTimeString
+      }));
     };
 
     getCurrentTime();
