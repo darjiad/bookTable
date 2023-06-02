@@ -3,65 +3,63 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { useNavigate ,Link} from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import "./BookT.css";
 
-
 function BookT() {
   const loc = useLocation();
-  const nv1=useNavigate();
-  
+  const nv1 = useNavigate();
+
   const data1 = loc.state.data;
-  const [data,setData]=useState(data1)
+  const [data, setData] = useState(data1);
   const [div, setDiv] = useState();
   const [person2, setPerson2] = useState(false);
   const [person4, setPerson4] = useState(false);
   const [person6, setPerson6] = useState(false);
   const [person8, setPerson8] = useState(false);
   const [person10, setPerson10] = useState(false);
-  const [occupancy,setOccupancy]=useState(0)
+  const [occupancy, setOccupancy] = useState(0);
   const [elder, setElder] = useState("");
   // const [kids, setKids] = useState("");
   const [totalperson, setTotalperson] = useState(0);
   const [showLayout, setShowLayout] = useState(false);
-  const [isActive,setIsActive]=useState(false);
+  const [isActive, setIsActive] = useState(false);
   const [selectedButton, setSelectedButton] = useState(null);
   const [sTable, setSTable] = useState("");
-  const [color,setColor]=useState("#cb202d")
+  const [color, setColor] = useState("#cb202d");
   const [date, setDate] = useState({
     date1: new Date().toISOString().slice(0, 10),
   });
   // const [time, setTime] = useState("");
-  const [currentTime, setCurrentTime] = useState('');
-  const [userData,setUserData]=useState({
-    name:'',
-    phoneNo:'',
-    totalperson:0,
-    date:date.date1,
-    time:currentTime
-
-  })
+  const [currentTime, setCurrentTime] = useState("");
+  const [userData, setUserData] = useState({
+    name: "",
+    phoneNo: "",
+    totalperson: 0,
+    date: date.date1,
+    time: currentTime,
+  });
   const [mes, setMes] = useState(false);
   console.log(userData);
 
   useEffect(() => {
     const getCurrentTime = () => {
       const currentDate = new Date();
-      const hours = String(currentDate.getHours()).padStart(2, '0');
-      const minutes = String(currentDate.getMinutes()).padStart(2, '0');
+      const hours = String(currentDate.getHours()).padStart(2, "0");
+      const minutes = String(currentDate.getMinutes()).padStart(2, "0");
       const currentTimeString = `${hours}:${minutes}`;
       setCurrentTime(currentTimeString);
       setUserData((prevUserData) => ({
         ...prevUserData,
-        time: currentTimeString
+        time: currentTimeString,
       }));
     };
 
     getCurrentTime();
   }, []);
   useEffect(() => {
-    console.log(totalperson)
+    console.log(totalperson);
     if (totalperson === 0) {
       setPerson6(false);
       setPerson4(false);
@@ -125,7 +123,7 @@ function BookT() {
       // setShowLayout(false);
       // setShowtable(false);
       setMes(true);
-      setSTable('')
+      setSTable("");
     }
   }, [PersonC]);
 
@@ -137,15 +135,14 @@ function BookT() {
     // const k = Number(kids);
     const el = Number(elder);
     setTotalperson(el);
-    setUserData({...userData,totalperson:el});
+    setUserData({ ...userData, totalperson: el });
   }
   function DisableDate() {
     return new Date().toISOString().split("T")[0];
     // setUserData({...userData,date:date});
-
   }
   function SelectTable(id) {
-    setSelectedButton(id)
+    setSelectedButton(id);
     if (id === "T1") {
       setSTable(id);
     } else if (id === "T2") {
@@ -163,38 +160,37 @@ function BookT() {
     }
 
     setData((prevItems) =>
-    prevItems.map((item) => {
-      if (item.name === id) {
+      prevItems.map((item) => {
+        if (item.name === id) {
           setIsActive(true);
 
           return {
             ...item,
-            select:true,
+            select: true,
             // price:Number(item.price*(Number(item.q)+1))
           };
         }
-        
+
         return item;
       })
     );
   }
-  
-  function Proceed(sTable)
-  {
-    console.log(sTable)
+
+  function Proceed(sTable) {
+    console.log(sTable);
     setData((prevItems) =>
-    prevItems.map((item) => {
-      if (item.name === sTable) {
+      prevItems.map((item) => {
+        if (item.name === sTable) {
           setIsActive(true);
 
           return {
             ...item,
-            reserved:true,
-            select:true,
+            reserved: true,
+            select: true,
             // price:Number(item.price*(Number(item.q)+1))
           };
         }
-        
+
         return item;
       })
     );
@@ -202,37 +198,48 @@ function BookT() {
   return (
     <div>
       <div className="bk2">
-      {/* <div className="nameandphn">
+        {/* <div className="nameandphn">
         </div> */}
         <div className="booktable">
-        <div className="Booking">
-          <span>Enter Name:</span>
-          <input type='text' onChange={(e) => setUserData({ ...userData, name: e.target.value })} required/>
-        </div>
-        <div className="Booking">
-          <span>Enter Phone No:</span>
-          <input type='text' onChange={(e) => setUserData({ ...userData, phoneNo: e.target.value })} required/>
-        </div>
-        
-        
+          <div className="Booking">
+            <span>Enter Name:</span>
+            <input
+              type="text"
+              onChange={(e) =>
+                setUserData({ ...userData, name: e.target.value })
+              }
+              required
+            />
+          </div>
+          <div className="Booking">
+            <span>Enter Phone No:</span>
+            <input
+              type="text"
+              onChange={(e) =>
+                setUserData({ ...userData, phoneNo: e.target.value })
+              }
+              required
+            />
+          </div>
+
           <div className="Booking">
             <span>Select Person:</span>
             {/* <div className="person"> */}
-              <select onChange={(e) => setElder(e.target.value)} required>
-                <option value="">--Select Persons--</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="20">20</option>
-              </select>
-              {/* <select onChange={(e) => setKids(e.target.value)} required>
+            <select onChange={(e) => setElder(e.target.value)} required>
+              <option value="">--Select Persons--</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+            </select>
+            {/* <select onChange={(e) => setKids(e.target.value)} required>
                 <option value="">--Select kids above 2 years--</option>
                 <option value="0">0</option>
                 <option value="1">1</option>
@@ -256,30 +263,34 @@ function BookT() {
               type="date"
               value={userData.date}
               required
-              onChange={(e) => setUserData((prevUserData) => ({
-    ...prevUserData,
-    date: e.target.value,
-                }  ))}
+              onChange={(e) =>
+                setUserData((prevUserData) => ({
+                  ...prevUserData,
+                  date: e.target.value,
+                }))
+              }
               min={DisableDate()}
             />
           </div>
           <div className="Booking">
             <span>Select Time:</span>
             <input
-        type="time"
-        value={userData.time}
-        onChange={(e) => setUserData((prevUserData) => ({
-    ...prevUserData,
-    time: e.target.value,
-                }  ))}
-      />
+              type="time"
+              value={userData.time}
+              onChange={(e) =>
+                setUserData((prevUserData) => ({
+                  ...prevUserData,
+                  time: e.target.value,
+                }))
+              }
+            />
           </div>
         </div>
-          <div className="showbtn">
-            <button onClick={PersonC} className="btne" type="submit">
-              Select Table
-            </button>
-          </div>
+        <div className="showbtn">
+          <button onClick={PersonC} className="btne" type="submit">
+            Select Table
+          </button>
+        </div>
 
         <div>
           {showLayout && elder && date && (
@@ -289,18 +300,23 @@ function BookT() {
                   const occupancy = val.Occupancy;
                   const boxes = [];
                   for (let i = 0; i < occupancy; i++) {
-                    boxes.push(<div key={i} style={{
-                      backgroundColor: selectedButton === val.name  && val.select ? "#cb202d" : "green",
-                        width: '50px',
-                        height: '50px',
-                        margin: '5px',
-            }}></div>);
+                    boxes.push(
+                      <div
+                        key={i}
+                        style={{
+                          backgroundColor:selectedButton === val.name && val.select ? "#cb202d": "green",
+                          width: "50px",
+                          height: "50px",
+                          margin: "5px",
+                        }}
+                      ></div>
+                    );
                   }
                   if (occupancy == "2") {
                     return (
-                      <div className="MainDiv2"  key={val.name}>
+                      <div className="MainDiv2" key={val.name}>
                         <button
-                          disabled={person2 || val.reserved===true }
+                          disabled={person2 || val.reserved === true}
                           onClick={() => SelectTable(val.name)}
                         >
                           {boxes.map((box, index) => (
@@ -315,7 +331,7 @@ function BookT() {
                     return (
                       <div className="MainDiv4">
                         <button
-                          disabled={person4 || val.reserved===true }
+                          disabled={person4 || val.reserved === true}
                           onClick={() => SelectTable(val.name)}
                         >
                           {boxes.map((box, index) => (
@@ -330,7 +346,7 @@ function BookT() {
                     return (
                       <div className="MainDiv6">
                         <button
-                          disabled={person6 || val.reserved===true}
+                          disabled={person6 || val.reserved === true}
                           onClick={() => SelectTable(val.name)}
                         >
                           {boxes.map((box, index) => (
@@ -341,11 +357,11 @@ function BookT() {
                         </button>
                       </div>
                     );
-                  } else if (occupancy == "8" ) {
+                  } else if (occupancy == "8") {
                     return (
                       <div className="MainDiv8">
                         <button
-                          disabled={person8 || val.reserved===true}
+                          disabled={person8 || val.reserved === true}
                           onClick={() => SelectTable(val.name)}
                         >
                           {boxes.map((box, index) => (
@@ -356,12 +372,11 @@ function BookT() {
                         </button>
                       </div>
                     );
-                  }
-                  else if (occupancy == "10" ) {
+                  } else if (occupancy == "10") {
                     return (
                       <div className="MainDiv10">
                         <button
-                          disabled={person10 || val.reserved===true }
+                          disabled={person10 || val.reserved === true}
                           onClick={() => SelectTable(val.name)}
                         >
                           {boxes.map((box, index) => (
@@ -373,19 +388,19 @@ function BookT() {
                       </div>
                     );
                   }
-                  
                 })}
               </div>
 
               <div>
-                {mes && 
-                  <h1 className="mes3">
-                    Total Persons are greter than 10 so Your Table will be
-                    arranged by Restaurent Staff
-                  </h1> 
+                {
+                  mes && (
+                    <h1 className="mes3">
+                      Total Persons are greter than 10 so Your Table will be
+                      arranged by Restaurent Staff
+                    </h1>
+                  )
 
-
-                 /* <div>
+                  /* <div>
                  {
                   data.map((val)=>{
                      const mergable=val.mergable;
@@ -416,12 +431,11 @@ function BookT() {
                   })
                  }
                  </div> */
-
-                  
-                
                 }
                 <h1 className="mes2">Your Selected Table is:{sTable}</h1>
-                <button className="button3" onClick={()=>Proceed(sTable)}>Proceed</button>
+                <button className="button3" onClick={() => Proceed(sTable)}>
+                  Proceed
+                </button>
               </div>
             </>
           )}

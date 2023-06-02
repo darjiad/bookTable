@@ -128,7 +128,7 @@ function WaitingList() {
                                     <option value="Yes">Yes</option>
                                 </select></td>
                                 <td class='border-2 border-red-700 text-center text-xl'>Link</td>
-                                <td class='border-red-700 border-2 text-center'><button  disabled={val.book=='No'} class={`${val.book=='No' ?'bg-red-700 text-white px-1 py-1 text-center opacity-10 mt-1 mb-1 rounded-md font-bold':'text-white font-bold  bg-red-700 px-1 py-1 mt-1 mb-1 rounded-md font-bold'}`} onClick={()=>Proceed(val.srno)}>Proceed</button></td>
+                                <td class='border-red-700 border-2 text-center'><button  disabled={val.book=='No'} class={`${val.book=='No' ?'bg-red-700 text-white px-1 py-1 text-center opacity-10 mt-1 mb-1 rounded-md font-bold':'text-white font-bold  bg-red-700 px-1 py-1 mt-1 mb-1 rounded-md '}`} onClick={()=>Proceed(val.srno)}>Proceed</button></td>
                                
                             </tr>
                             </tbody>
