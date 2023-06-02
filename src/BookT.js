@@ -341,11 +341,11 @@ function BookT() {
                         </button>
                       </div>
                     );
-                  } else if (occupancy == "8" || val.reserved===true) {
+                  } else if (occupancy == "8" ) {
                     return (
                       <div className="MainDiv8">
                         <button
-                          disabled={person8 }
+                          disabled={person8 || val.reserved===true}
                           onClick={() => SelectTable(val.name)}
                         >
                           {boxes.map((box, index) => (
@@ -357,11 +357,11 @@ function BookT() {
                       </div>
                     );
                   }
-                  else if (occupancy == "10" || val.reserved===true) {
+                  else if (occupancy == "10" ) {
                     return (
                       <div className="MainDiv10">
                         <button
-                          disabled={person10 }
+                          disabled={person10 || val.reserved===true }
                           onClick={() => SelectTable(val.name)}
                         >
                           {boxes.map((box, index) => (
