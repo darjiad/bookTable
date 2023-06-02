@@ -54,7 +54,7 @@ function WaitingList() {
     function AddToList()
     {
         // console.log(name);
-        if(name!='' && mobileNo!='' )
+        if(name!='' && mobileNo!='' && person>0 )
         {
         setSrno(srno+1)
         setWaitingData([...waitingData,{
