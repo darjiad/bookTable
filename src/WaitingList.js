@@ -21,15 +21,19 @@ function WaitingList() {
          setShow(true);
     
     },[])
-    function TableBookOrNot(e)
-    {
-        // console.log(val)
-        setBook(e.target.value);
-        console.log(book);
-        // if(book==='No')
-        // // console.log('in if ')
-        //  setShow(true);
-    }
+    function TableBookOrNot(e, srno) {
+        const updatedWaitingData = waitingData.map((val) => {
+          if (val.srno === srno) {
+            return {
+              ...val,
+              book: e.target.value
+            };
+          }
+          return val;
+        });
+      
+        setWaitingData(updatedWaitingData);
+      }
      function Proceed(srno)
     {
         if(book==='No')
@@ -55,7 +59,7 @@ function WaitingList() {
             srno:srno,
             name:name,
             mobileNo:mobileNo,
-           person:person       
+           person:person,   
          }])
           setShowlist(true)
           setName('');
@@ -113,12 +117,12 @@ function WaitingList() {
                                 <td class='border-2 text-center'>{val.mobileNo}</td>
                                 <td class='border-2 text-center'>{val.person}</td>
                                 <td class='border-2 text-center'>
-                                <select value={book} onChange={TableBookOrNot}>
+                                <select value={val.book} onChange={(e)=>TableBookOrNot(e,val.srno)}>
                                     <option value="No">No</option>
                                     <option value="Yes">Yes</option>
                                 </select></td>
                                 <td class='border-2 text-center'>Link</td>
-                                <td><button disabled={book=='No'} class='text-white font-bold  bg-neutral-400 px-1 py-1' onClick={()=>Proceed(val.srno)}>Proceed</button></td>
+                                <td><button disabled={val.book=='No'} class='text-white font-bold  bg-neutral-400 px-1 py-1' onClick={()=>Proceed(val.srno)}>Proceed</button></td>
                                
                             </tr>
                             </tbody>
