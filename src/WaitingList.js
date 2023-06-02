@@ -53,8 +53,10 @@ function WaitingList() {
 
     function AddToList()
     {
-        setSrno(srno+1)
         // console.log(name);
+        if(name!='' && mobileNo!='' )
+        {
+        setSrno(srno+1)
         setWaitingData([...waitingData,{
             srno:srno,
             name:name,
@@ -65,6 +67,7 @@ function WaitingList() {
           setName('');
           setMobileNO('')
           setPerson(0);
+        }
         //   setKids('')
     }
   return (
