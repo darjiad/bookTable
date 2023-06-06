@@ -177,16 +177,17 @@
     color: #cb202d;
     margin: 20px;
   } */
-  .MainDiv2  button  {
-    display: grid;
-    grid-template-columns: auto auto;
-    margin-top: 20px;
-    color: #cb202d;
-    width: 30px;
-    border: none;
+  .MainDiv   {
+    margin-bottom: 30px;
     
     /* grid-gap: 20px; */
   }
+  .MainDiv button:disabled ,.MainDiv2 button[disabled]{
+    /* background-color: black; */
+    opacity: 0.1;
+     border: none;
+     cursor: none;
+ }
  
   .div{
     /* display: grid;
@@ -201,100 +202,7 @@
     /* width: 30px; */
   }
   
-  .MainDiv4 button{
-    display: grid;
-   grid-template-columns: auto auto ;
-    margin-top: 20px;
-    border: none;
-    
-    /* grid-column-gap: 10px; */
-    /* color: #cb202d; */
-    /* border: 2px soli red; */
-    align-self: center;
-    width: 30px;
-  }
-  .MainDiv6 button{
-    display: grid;
-   grid-template-columns: auto auto auto;
-    margin-top: 20px;
-    /* grid-column-gap: 10px; */
-    color: #cb202d;
-    border: none;
-    align-self: center;
-    width: 30px;
-    /* grid-gap: 20px; */
-    /* width: 30px; */
-
-  }
-  .MainDiv8 button{
-    display: grid;
-   grid-template-columns: auto auto auto auto;
-    margin-top: 20px;
-    /* grid-column-gap: 10px; */
-    color: #cb202d;
-    align-self: center;
-    border: none;
-    width: 30px;
-    /* grid-gap: 20px; */
-    /* width: 30px; */
-
-  }
-  .MainDiv10 button{
-    display: grid;
-   grid-template-columns: auto auto auto auto auto;
-    margin-top: 20px;
-    /* grid-column-gap: 10px; */
-    color: #cb202d;
-    align-self: center;
-    border: none;
-    width: 30px;
-    /* grid-gap: 20px; */
-    /* width: 30px; */
-
-  }
-  .MainDivM button{
-    display: grid;
-   grid-template-columns: auto auto auto auto auto auto;
-    margin-top: 20px;
-    /* grid-column-gap: 10px; */
-    color: #cb202d;
-    align-self: center;
-    border: none;
-    width: 30px;
-    /* grid-gap: 20px; */
-    /* width: 30px; */
-
-  }
-  .MainDiv2 button:disabled ,.MainDiv2 button[disabled]{
-    opacity: 0.1;
-     /* background-color: black; */
-     border: none;
-     cursor: none;
- }
- .MainDiv4 button:disabled ,.MainDiv4 button[disabled]{
-  opacity: 0.1;
-   /* background-color: black; */
-   border: none;
-   cursor: none;
-}
-.MainDiv6 button:disabled ,.MainDiv6 button[disabled]{
-  opacity: 0.1;
-   /* background-color: black; */
-   border: none;
-   cursor: none;
-}
-.MainDiv8 button:disabled ,.MainDiv8 button[disabled]{
-  opacity: 0.1;
-   /* background-color: black; */
-   border: none;
-   cursor: none;
-}
-.MainDiv10 button:disabled ,.MainDiv10 button[disabled]{
-  opacity: 0.1;
-   /* background-color: black; */
-   border: none;
-   cursor: none;
-}
+  
   .box.active {
     width: 50px;
     height: 50px;
@@ -312,6 +220,8 @@
     grid-template-columns: auto auto auto ;
       align-items: center;
       margin-left: 170px;
+      
+      
   }
   
   .button{

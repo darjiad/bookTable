@@ -6,13 +6,14 @@ import { useNavigate } from "react-router-dom";
 function WaitingList() {
   const [name, setName] = useState("");
   const nv1 = useNavigate();
-  const [mobileNo, setMobileNO] = useState("");
+  const [mobileNo, setMobileNO] = useState();
   const [person, setPerson] = useState(0);
   // const [kids,setKids]=useState(0);
   const [showlist, setShowlist] = useState(true);
   const [waitingData, setWaitingData] = useState([]);
   const [book, setBook] = useState("No");
   const [srno, setSrno] = useState(1);
+  const [addtolist,setAddtolist]=useState(false);
   const [waiting, setWaiting] = useState([]);
   const [show, setShow] = useState(false);
   // useEffect(()=>{
@@ -51,7 +52,19 @@ function WaitingList() {
 
   function AddToList() {
     // console.log(name);
-    if (name != "" && mobileNo != "" && person > 0) {
+    if(mobileNo.length!=10)
+    {
+      alert("Please Enter Valid PhoneNo")
+    }
+    if(name=="")
+    {
+      alert("Please Enter Name")
+    }
+    if(person<=0)
+    {
+      alert("Please Enter Valid Person Number")
+    }
+    if (name != "" && mobileNo != "" && mobileNo.length==10 && person > 0) {
       setSrno(srno + 1);
       setWaitingData([
         ...waitingData,
@@ -125,6 +138,7 @@ function WaitingList() {
         </table>
         <div class="flex justify-center ">
           <button
+            disabled={addtolist}
             onClick={AddToList}
             class="text-white font-bold mt-6 mb-6 bg-red-700 px-2 py-2 rounded-md "
           >

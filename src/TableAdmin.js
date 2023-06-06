@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './TableAdmin.css'
 import { Link,useNavigate } from 'react-router-dom';
+import './BookT.css'
 // import AllDataRes from './AllDataRes';
 
 
@@ -194,9 +195,37 @@ function TableAdmin() {
     const [num,setNum]=useState(0);
     const [show,setShow]=useState(false);
     const [show1,setShow1]=useState(false);
+    const [layout,setLayout]=useState(false);
+    const[text,setText]=useState("Show Details")
+    const[text2,setText2]=useState("Show Layout")
     function Submit()
     {
-        setShow1(true);
+        console.log(show1)
+        setShow1(!show1);
+        if(show1)
+        {
+            console.log(show1);
+            setText("Show Details")
+        }
+        else{
+            console.log(show1);
+            setText("Hide Details")
+        }
+        // nv1('/bt2')
+    }
+    function Layout()
+    {
+        // console.log(show1)
+        setLayout(!layout);
+        if(layout)
+        {
+            // console.log(show1);
+            setText2("Show Layout")
+        }
+        else{
+            // console.log(show1);
+            setText2("Hide Layout")
+        }
         // nv1('/bt2')
     }
     function AddTables()
@@ -279,7 +308,8 @@ function TableAdmin() {
              }
             </tbody>
         </table>
-        <button className='save' onClick={Submit}>Show</button>
+        <button className='save' onClick={Submit}>{text}</button>
+        <button className='layout' onClick={Layout}>{text2}</button>
  <Link to='/bt2' state={{data:tnew}}><input type='button' className='save' value='Save'/></Link> 
  </>
     }
@@ -312,8 +342,94 @@ function TableAdmin() {
             </div>
         }
         </div>
+        <div>
+        {
+            layout &&
+        <div className="mainCon">
+        {tnew.map((val) => {
+  const occupancy = val.Occupancy;
+  const boxes = [];
+  for (let i = 0; i < occupancy; i++) {
+    boxes.push(
+      <div
+        key={i}
+        style={{
+          backgroundColor: "green",
+          width: "50px",
+          height: "50px",
+          margin: "5px",
+        }}
+      ></div>
+    );
+  }
+  if (occupancy % 2 === 0) {
+    const halfNumber = occupancy / 2;
+    const firstRow = boxes.slice(0, halfNumber);
+    const secondRow = boxes.slice(halfNumber, occupancy);
+
+    return (
+      <div className="MainDiv" key={val.name}>
+        <table>
+          <tbody>
+            <tr>
+              {firstRow.map((box, index) => (
+                <td key={index}><button>{box}</button></td>
+              ))}
+            </tr>
+            <tr>
+              {secondRow.map((box, index) => (
+                <td key={index}><button>{box}</button></td>
+              ))}
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    );
+  }
+  if (occupancy % 2 === 1) {
+    const halfNumber = Math.floor(occupancy / 2);
+    console.log(halfNumber)
+    const firstRowBoxes = boxes.slice(0, halfNumber);
+    const secondRowBox = boxes[halfNumber];
+    const thirdRowBoxes = boxes.slice(halfNumber + 1, occupancy);
+
+    return (
+      <div className="MainDiv" key={val.name}>
+        <table>
+          <tbody>
+            <tr>
+                {firstRowBoxes.map((box, index) => (
+              <td key={index} rowSpan={2}>
+                
+                <button>   {box}</button> 
+                  
+              </td>
+                ))}
+              <td ><div></div></td>
+            </tr>
+            <tr>
+              <td rowSpan="2"><button>{secondRowBox}</button></td>
+            </tr>
+            <tr>
+              {thirdRowBoxes.map((box, index) => (
+                <td key={index}><button>{box}</button></td>
+              ))}
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    );
+  } 
+})}
+
+
+              </div>
+
+              
+        }
+        </div>
     </div>
   )
 }
 
-export default TableAdmin
+export default TableAdmin;
