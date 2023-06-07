@@ -19,6 +19,7 @@ import Confirm from './Confirm';
 import ReleaseTable from './ReleaseTable';
 import Book_Reales from './Book_Reales';
 import WaitingList from './WaitingList';
+import BookT2 from './BookT2';
 
 function TableLink() {
     return (
@@ -44,6 +45,7 @@ function TableLink() {
             <Route path='/RealeseTable' element={<ReleaseTable/>}></Route>
             <Route path='/BookTableAdmin' element={<Book_Reales/>}></Route>
             <Route path='/WaitingList' element={<WaitingList/>}></Route>
+            <Route path='/bkt' element={<BookT2/>}></Route>
             {/* <Route path='/bt2' element={<BookTable2/>}></Route> */}
             
         </Routes>

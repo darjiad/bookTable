@@ -7,7 +7,7 @@ import { useNavigate, Link } from "react-router-dom";
 
 import "./BookT.css";
 
-function BookT() {
+function BookT2() {
   const loc = useLocation();
    const data1 = loc.state.data;
   const [data, setData] = useState(data1);
@@ -112,13 +112,14 @@ function BookT() {
   }
   return (
     <div>
-      <div className="bk2" >
+      <div className="bk2" class="min-w-[60%] min-h-[60%]" >
         {/* <div className="nameandphn">
         </div> */}
         <div className="booktable">
           <div className="Booking">
             <span>Enter Name:</span>
             <input
+            class="px-1 py-1 border-2 border-red-700 border-solid"
               type="text"
               onChange={(e) =>
                 setUserData({ ...userData, name: e.target.value })
@@ -129,6 +130,7 @@ function BookT() {
           <div className="Booking">
             <span>Enter Phone No:</span>
             <input
+             class="px-1 py-1 border-2 border-red-700 border-solid"
               type="text"
               onChange={(e) =>
                 setUserData({ ...userData, phoneNo: e.target.value })
@@ -347,4 +349,4 @@ function BookT() {
   );
 }
 
-export default BookT;
+export default BookT2;

@@ -5,7 +5,7 @@ import './BookT.css'
 // import AllDataRes from './AllDataRes';
 
 
-function TableAdmin() {
+function Practice() {
     // const nv1=useNavigate();
     const TableData=[{
         id:'1',
@@ -274,7 +274,7 @@ function TableAdmin() {
     <div className='flex'>
     <p className='Addtable'><span>Enter The number of Tables::</span><input type='number' onChange={(e)=>setNum(e.target.value)}/><button onClick={AddTables}>Add</button></p>
     <div>
-    <Link to='/bkt' state={{data:tnew}}><input type='button' className='BookTable' value='BookTable' onClick={Submit} /></Link> 
+    {/* <Link to='/BookTableAdmin' state={{data:tnew}}><input type='button' className='BookTable' value='BookTable' onClick={Submit} /></Link>  */}
  
     </div>
     </div>
@@ -310,7 +310,7 @@ function TableAdmin() {
         </table>
         <button className='save' onClick={Submit}>{text}</button>
         <button className='layout' onClick={Layout}>{text2}</button>
- <Link to='/bt2' state={{data:tnew}}><input type='button' className='save' value='Save'/></Link> 
+ {/* <Link to='/bt2' state={{data:tnew}}><input type='button' className='save' value='Save'/></Link>  */}
  </>
     }
         
@@ -368,17 +368,17 @@ function TableAdmin() {
     const secondRow = boxes.slice(halfNumber, occupancy);
 
     return (
-      <div className="MainDiv" key={val.name}>
+      <div key={val.name}>
         <table>
           <tbody>
             <tr>
               {firstRow.map((box, index) => (
-                <td key={index}><button>{box}</button></td>
+                <td key={index}>{box}</td>
               ))}
             </tr>
             <tr>
               {secondRow.map((box, index) => (
-                <td key={index}><button>{box}</button></td>
+                <td key={index}>{box}</td>
               ))}
             </tr>
           </tbody>
@@ -401,18 +401,25 @@ function TableAdmin() {
                 {firstRowBoxes.map((box, index) => (
               <td key={index} rowSpan={2}>
                 
-                <button>   {box}</button> 
+                    {box}
                   
               </td>
                 ))}
-              <td ><div></div></td>
+              <td style={{ position:'relative',
+          top:'3px'}}><div  style={{
+          backgroundColor: "white",
+          width: "50px",
+          height: "50px",
+          margin: "5px",
+         
+        }}></div></td>
             </tr>
             <tr>
-              <td rowSpan="2"><button>{secondRowBox}</button></td>
+              <td>{secondRowBox}</td>
             </tr>
             <tr>
               {thirdRowBoxes.map((box, index) => (
-                <td key={index}><button>{box}</button></td>
+                <td key={index}>{box}</td>
               ))}
             </tr>
           </tbody>
@@ -432,4 +439,4 @@ function TableAdmin() {
   )
 }
 
-export default TableAdmin;
+export default Practice;
