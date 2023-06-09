@@ -115,11 +115,11 @@ function BookT2() {
       <div className="bk2" class="min-w-[60%] min-h-[60%]" >
         {/* <div className="nameandphn">
         </div> */}
-        <div className="booktable">
+        <div className="booktable" class='w-10/12'>
           <div className="Booking">
             <span>Enter Name:</span>
             <input
-            class="px-1 py-1 border-2 border-red-700 border-solid"
+            class="px-1 py-1 border-2 border-red-700 border-solid "
               type="text"
               onChange={(e) =>
                 setUserData({ ...userData, name: e.target.value })
@@ -142,7 +142,7 @@ function BookT2() {
           <div className="Booking">
             <span>Select Person:</span>
             {/* <div className="person"> */}
-            <select onChange={(e) => setElder(e.target.value)} required>
+            <select   class="px-1 py-1 border-2 border-red-700 border-solid" onChange={(e) => setElder(e.target.value)} required>
               <option value="">--Select Persons--</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -161,6 +161,7 @@ function BookT2() {
             {" "}
             <span>Select Date:</span>
             <input
+              class="px-1 py-1 border-2 border-red-700 border-solid"
               type="date"
               value={userData.date}
               required
@@ -176,6 +177,7 @@ function BookT2() {
           <div className="Booking">
             <span>Select Time:</span>
             <input
+              class="px-1 py-1 border-2 border-red-700 border-solid"
               type="time"
               value={userData.time}
               onChange={(e) =>

@@ -274,7 +274,7 @@ function TableAdmin() {
     <div className='flex'>
     <p className='Addtable'><span>Enter The number of Tables::</span><input type='number' onChange={(e)=>setNum(e.target.value)}/><button onClick={AddTables}>Add</button></p>
     <div>
-    <Link to='/bkt' state={{data:tnew}}><input type='button' className='BookTable' value='BookTable' onClick={Submit} /></Link> 
+    <Link to='/bt2' state={{data:tnew}}><input type='button' className='BookTable' value='BookTable' onClick={Submit} /></Link> 
  
     </div>
     </div>
@@ -421,12 +421,8 @@ function TableAdmin() {
     );
   } 
 })}
-
-
-              </div>
-
-              
-        }
+</div>
+}
         </div>
     </div>
   )
